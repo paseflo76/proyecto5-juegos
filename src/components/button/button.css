@@ -1,0 +1,64 @@
+/* src/components/button/button.css */
+
+/* Estilo base para todos los botones reutilizables */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007bff; /* Azul predeterminado */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Ligero aumento al pasar el ratón */
+}
+
+button:active {
+  background-color: #003f7f; /* Azul aún más oscuro al hacer clic */
+  transform: scale(0.95); /* Ligera reducción al hacer clic */
+}
+
+/* Botón deshabilitado */
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Estilo adicional para botones específicos */
+.boton-reiniciar {
+  margin-top: 20px;
+  background-color: #28a745; /* Verde para reiniciar */
+}
+
+.boton-reiniciar:hover {
+  background-color: #218838;
+}
+
+.boton-reiniciar:active {
+  background-color: #19692c;
+}
+
+.tecla {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #f8f9fa; /* Gris claro */
+  color: #000000;
+  font-size: 18px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.tecla:hover {
+  background-color: #e2e6ea; /* Gris más oscuro al pasar el ratón */
+}
+
+.tecla:active {
+  background-color: #d6d8db; /* Gris aún más oscuro al hacer clic */
+}

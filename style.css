@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #b19a8c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+.seleccion {
+  padding: 20px;
+  background-color: cadetblue;
+}
+.card {
+  background-color: white;
+  border: 2px solid #0b0101;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+  margin: 10px;
+}
+
+.card img.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.play-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.play-button:hover {
+  background-color: #0056b3;
+}
+.back-button {
+  top: 20px;
+  left: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background-color: #e64a19;
+}
+@media (max-width: 600px) {
+}

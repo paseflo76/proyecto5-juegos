@@ -1,0 +1,111 @@
+#hanged {
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: url(/public/assets/img1.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px 0;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#figura-ahorcado {
+  width: 100px;
+  height: 200px;
+  border-left: 4px solid black;
+  border-top: 4px solid black;
+  margin: 20px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.parte {
+  position: absolute;
+  background-color: black;
+}
+
+.cabeza {
+  width: 35px;
+  height: 30px;
+  border-radius: 50%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cuerpo {
+  width: 10px;
+  height: 60px;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brazo-izquierdo {
+  width: 40px;
+  height: 9px;
+  top: 60px;
+  left: 10px;
+}
+
+.brazo-derecho {
+  width: 40px;
+  height: 9px;
+  top: 60px;
+  right: 10px;
+}
+
+.pierna-izquierda {
+  width: 9px;
+  height: 40px;
+  top: 110px;
+  left: 36%;
+}
+
+.pierna-derecha {
+  width: 9px;
+  height: 40px;
+  top: 110px;
+  left: 56%;
+}
+#botones {
+  margin-top: 20px;
+  width: 350px;
+}
+
+#botones button {
+  font-size: 18px;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#botones button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.hangedBoton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  #hanged {
+    flex-direction: column;
+  }
+  #botones {
+    padding-top: 20px;
+  }
+
+  #contenido {
+    margin-top: 30px;
+  }
+}

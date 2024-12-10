@@ -1,0 +1,43 @@
+#memory {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+  background-image: url(/public/assets/img2.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 10px;
+  margin: auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cartas-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carta {
+  width: 100px;
+  height: 100px;
+  background-color: #4056d6;
+  background-image: url(https://www.transparenttextures.com/patterns/argyle.png);
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  transition: background-color 0.3s;
+}
+
+.carta:hover {
+  background-color: #5d0040;
+}
+.buttons-memory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
