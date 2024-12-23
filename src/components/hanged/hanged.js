@@ -46,6 +46,7 @@ export function createHangedComponent() {
   let letrasAdivinadas = Array(palabraSecreta.length).fill('_')
   let intentos = 6
   let letrasIncorrectas = []
+  let juegoActivo = true // Nueva bandera para controlar el estado del juego
 
   const hangedContainer = document.createElement('section')
   hangedContainer.id = 'hanged'
@@ -94,7 +95,7 @@ export function createHangedComponent() {
   }
 
   const manejarLetra = (letra) => {
-    if (letrasIncorrectas.includes(letra) || letrasAdivinadas.includes(letra))
+    if (!juegoActivo || letrasIncorrectas.includes(letra) || letrasAdivinadas.includes(letra))
       return
 
     const palabraSinAcentos = eliminarAcentos(palabraSecreta)
@@ -120,9 +121,20 @@ export function createHangedComponent() {
 
     if (letrasAdivinadas.join('') === palabraSecreta) {
       mensaje.textContent = '¡Has ganado!'
+      terminarJuego()
     } else if (intentos === 0) {
       mensaje.textContent = `¡Has perdido! La palabra era ${palabraSecreta}`
+      terminarJuego()
     }
+  }
+
+  const terminarJuego = () => {
+    juegoActivo = false // Marcar el juego como terminado
+    const botones = botonesContainer.querySelectorAll('.tecla')
+    botones.forEach((boton) => {
+      boton.disabled = true
+      boton.classList.add('deshabilitado') // Clase para mostrar visualmente que están deshabilitados
+    })
   }
 
   const botonesContainer = document.createElement('div')
@@ -139,6 +151,7 @@ export function createHangedComponent() {
     letrasAdivinadas = Array(palabraSecreta.length).fill('_')
     intentos = 6
     letrasIncorrectas = []
+    juegoActivo = true // Reiniciar la bandera del juego activo
     palabraHTML.textContent = letrasAdivinadas.join(' ')
     intentosHTML.textContent = `Intentos restantes: ${intentos}`
     letrasIncorrectasHTML.textContent = `Letras incorrectas: ${letrasIncorrectas.join(
@@ -146,7 +159,14 @@ export function createHangedComponent() {
     )}`
     mensaje.textContent = 'Adivina la palabra'
     figuraAhorcado.innerHTML = ''
+
+    const botones = botonesContainer.querySelectorAll('.tecla')
+    botones.forEach((boton) => {
+      boton.disabled = false
+      boton.classList.remove('deshabilitado') // Eliminar la clase de deshabilitado
+    })
   }
+
   const botonsHanged = document.createElement('div')
   botonsHanged.className = 'hangedBoton'
 
@@ -175,3 +195,4 @@ export function createHangedComponent() {
 
   return hangedContainer
 }
+
